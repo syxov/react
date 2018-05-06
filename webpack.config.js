@@ -1,5 +1,6 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = function (env, options) {
     const isProduction = options.mode === 'production';
@@ -42,6 +43,10 @@ module.exports = function (env, options) {
                 {
                     test: /\.jsx?$/,
                     loader: 'babel-loader',
+                },
+                {
+                    test: /\.less$/,
+                    loader: 'style-loader!css-loader!less-loader',
                 }
             ]
         },
@@ -50,6 +55,11 @@ module.exports = function (env, options) {
             new HtmlWebpackPlugin({
                 template: 'src/index.html',
                 inject: 'body'
+            }),
+
+            new webpack.ProvidePlugin({
+                React: 'react',
+                ReactDOM: 'react-dom'
             })
         ]
     };
