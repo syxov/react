@@ -1,4 +1,4 @@
-import {MainPageComponent} from './pages/main-page/main-page';
 import './main.less';
+import {OverviewPage} from './pages/overview-page/overview-page';
 
-ReactDOM.render(<MainPageComponent/>, document.getElementById('container'));
+ReactDOM.render(<OverviewPage/>, document.getElementById('container'));

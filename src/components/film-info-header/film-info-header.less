@@ -1,0 +1,79 @@
+.info-header {
+   width: 100%;
+   color: white;
+   margin-bottom: 20px;
+
+  .header {
+    background: url("../../assets/header.jpg") no-repeat center;
+    background-size: cover;
+    padding: 10px 50px 20px;
+
+    .netflix-and-search {
+      display: flex;
+      justify-content: space-between;
+      color: rgb(245, 82, 99);
+
+      button {
+        color: rgb(245, 82, 99);
+        border: 0;
+        background-color: white;
+        padding: 9px 12px;
+        font-weight: bold;
+        border-radius: 2px;
+        text-shadow: 0 0 1px currentColor;
+        outline: 0;
+        cursor: pointer;
+      }
+    }
+
+    .info {
+      display: flex;
+
+      img {
+        margin-right: 20px;
+      }
+
+	  .title-and-rating {
+		display: flex;
+		align-items: center;
+
+		.title {
+		  color: rgb(245, 82, 99);
+		  margin: 0 30px 0 0;
+		  font-weight: bold;
+		  font-size: 40px;
+		}
+
+		.rating {
+		  border: 1px solid green;
+		  border-radius: 50%;
+		  color: green;
+		  opacity: 0.7;
+		  width: 35px;
+		  height: 35px;
+		  text-align: center;
+		  line-height: 35px;
+		}
+	  }
+
+	  .runtime-and-duration {
+		margin-bottom: 20px;
+
+		span:first-child {
+		  margin-right: 30px;
+		}
+	  }
+
+	  .description {
+		color: rgb(117, 117, 117);
+	  }
+    }
+  }
+
+  .films-by-genre {
+	color: black;
+	background-color: rgb(245, 245, 245);
+	padding: 6px 15%;
+	font-weight: bold;
+  }
+}

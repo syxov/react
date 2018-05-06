@@ -2,7 +2,7 @@ import {FilmsList} from '../../components/films-list/films-list';
 import {Fragment} from 'react';
 import {SearchHeader} from '../../components/search-header/search-header';
 
-export class MainPageComponent extends React.PureComponent {
+export class MainPage extends React.PureComponent {
     constructor(...args) {
         super(...args);
         this.state = {

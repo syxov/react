@@ -2,6 +2,14 @@ import {FilmPreview} from './film-preview/film-preview';
 import './films-list.less';
 
 export function FilmsList(props) {
+    if (props.films && props.films.length) {
+        return <FilmsPreviewContainer films={props.films}/>;
+    } else {
+        return <NoResultsFound/>;
+    }
+}
+
+function FilmsPreviewContainer(props) {
     return (
         <div className="films-preview-container">
             {
@@ -13,6 +21,14 @@ export function FilmsList(props) {
                         filmCreationYear={info.runtime}
                         filmGenre={info.genre}/>)
             }
+        </div>
+    );
+}
+
+function NoResultsFound() {
+    return (
+        <div className="films-preview-container">
+            <h1>No Films Found</h1>
         </div>
     );
 }
