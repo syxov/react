@@ -1,4 +1,3 @@
-import './main-page.less';
 import {FilmsList} from '../components/films-list/films-list';
 import {Fragment} from 'react';
 import {SearchHeader} from '../components/search-header/search-header';
