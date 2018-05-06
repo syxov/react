@@ -1,6 +1,6 @@
-import {FilmsList} from '../components/films-list/films-list';
+import {FilmsList} from '../../components/films-list/films-list';
 import {Fragment} from 'react';
-import {SearchHeader} from '../components/search-header/search-header';
+import {SearchHeader} from '../../components/search-header/search-header';
 
 export class MainPageComponent extends React.PureComponent {
     constructor(...args) {
