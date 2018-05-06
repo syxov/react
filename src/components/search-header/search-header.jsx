@@ -1,6 +1,6 @@
 import './search-header.less';
 
-export function SearchHeader(props) {
+export function SearchHeader() {
     return (
         <div className="search-header">
             <div className="netflix">netflixroulette</div>
