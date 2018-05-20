@@ -1,15 +1,11 @@
-import * as types from '../action/ActionTypes';
+import * as types from '../action/actions';
 
-const initialState = {
-    films: [],
-};
+const initialState = [];
 
 export function FilmsReducer(state = initialState, action) {
     switch (action.type) {
         case types.DOWNLOAD_FILMS_SUCCESS:
-            console.log(action);
             return action.films;
-
         default:
             return state;
     }

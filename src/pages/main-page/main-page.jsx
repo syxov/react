@@ -3,7 +3,7 @@ import {Fragment} from 'react';
 import {SearchHeader} from '../../components/search-header/search-header';
 import {connect} from 'react-redux';
 import {store} from "../../main";
-import {FetchMovies} from "../../action/ActionGenerators";
+import {fetchMovies} from "../../action/films-download-actions-generator";
 
 @connect(state => ({
     films: state.films
@@ -11,11 +11,10 @@ import {FetchMovies} from "../../action/ActionGenerators";
 export class MainPage extends React.PureComponent {
     constructor(...args) {
         super(...args);
-        store.dispatch(FetchMovies());
+        store.dispatch(fetchMovies());
     }
 
     render() {
-        console.log(this.props.films);
         return (
             <Fragment>
                 <SearchHeader/>
