@@ -8,7 +8,7 @@ export function FilmPreview(props) {
                 <div className="first-row">
                     <span>{props.filmName}</span><span className="year">{props.filmCreationYear}</span>
                 </div>
-                <div className="second-row">{props.filmGenre}</div>
+                <div className="second-row">{props.filmGenre.join(', ')}</div>
             </div>
         </div>
     );
