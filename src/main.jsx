@@ -5,24 +5,39 @@ import {MainPage} from './pages/main-page/main-page';
 import { Provider } from 'react-redux';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
 import thunkMiddleware from 'redux-thunk'
-import {FilmsReducer} from "./reducers/films-reducer";
+import {FilmsReducer} from './reducers/films-reducer';
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+import { PersistGate } from 'redux-persist/integration/react'
+
+const persistConfig = {
+	key: 'root',
+	storage,
+}
 
 const reducers = combineReducers({
     films: FilmsReducer
 });
+
+const persistedReducer = persistReducer(persistConfig, reducers);
+
 export const store = createStore(
-    reducers,
+	persistedReducer,
     applyMiddleware(
         thunkMiddleware
     )
 );
 
+const persistor = persistStore(store);
+
 ReactDOM.render(
     <Provider store={store}>
-        <ErrorBoundary>
-            <MainPage/>
-            {/*<OverviewPage/>*/}
-        </ErrorBoundary>
+		<PersistGate loading={null} persistor={persistor}>
+			<ErrorBoundary>
+				<MainPage/>
+				{/*<OverviewPage/>*/}
+			</ErrorBoundary>
+		</PersistGate>
     </Provider>,
     document.getElementById('container')
 );
