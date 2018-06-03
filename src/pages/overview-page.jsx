@@ -1,9 +1,9 @@
-import {FilmInfoHeader} from '../../components/film-info-header/film-info-header';
-import {FilmsList} from '../../components/films-list/films-list';
+import {FilmInfoHeader} from '../components/film-info-header/film-info-header';
+import {FilmsList} from '../components/films-list/films-list';
 import {Fragment} from 'react';
-import {fetchMovieInfo} from '../../action/film-download-actions-generator';
+import {fetchMovieInfo} from '../action/film-download-actions-generator';
 import {connect} from 'react-redux';
-import {store} from "../../main";
+import {store} from "../main";
 
 @connect(state => ({
 	film: state.filmOverview
