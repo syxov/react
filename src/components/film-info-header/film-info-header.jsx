@@ -9,16 +9,16 @@ export function FilmInfoHeader(props) {
                     <button>Search</button>
                 </div>
                 <div className="info">
-                    <img src={props.posterPath}/>
+                    <img src={props.poster_path}/>
                     <div>
 						<div className="title-and-rating">
 							<div className="title">{props.title}</div>
-							<div className="rating">{props.rating}</div>
+							<div className="rating">{props.vote_average}</div>
 						</div>
                         <div className="runtime-and-duration">
-                            <span>{props.runtime}</span><span>{props.duration} min</span>
+                            <span>{props.release_date}</span><span>{props.runtime} min</span>
                         </div>
-                        <div className="description">{props.description}</div>
+                        <div className="description">{props.overview}</div>
                     </div>
                 </div>
             </div>

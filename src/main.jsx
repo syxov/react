@@ -14,6 +14,7 @@ import {
 	Route,
 	Switch
 } from 'react-router-dom';
+import {FilmReducer} from './reducers/film-reducer';
 
 const persistConfig = {
 	key: 'root',
@@ -21,7 +22,8 @@ const persistConfig = {
 };
 
 const reducers = combineReducers({
-    films: FilmsReducer
+    films: FilmsReducer,
+	filmOverview: FilmReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);
