@@ -10,7 +10,7 @@ import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { PersistGate } from 'redux-persist/integration/react';
 import {
-	BrowserRouter as Router,
+	HashRouter as Router,
 	Route,
 	Switch
 } from 'react-router-dom';
