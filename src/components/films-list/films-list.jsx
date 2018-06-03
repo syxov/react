@@ -16,6 +16,7 @@ function FilmsPreviewContainer(props) {
                 props.films.map(info =>
                     <FilmPreview
                         key={info.id.toString()}
+                        id={info.id}
                         filmPosterSrc={info.poster_path}
                         filmName={info.title}
                         filmCreationYear={info.release_date}
