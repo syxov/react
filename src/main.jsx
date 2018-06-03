@@ -2,19 +2,16 @@ import './main.less';
 import {OverviewPage} from './pages/overview-page';
 import {ErrorBoundary} from './components/error-boundary';
 import {MainPage} from './pages/main-page';
-import { Provider } from 'react-redux';
-import {createStore, combineReducers, applyMiddleware} from 'redux';
+import {Provider} from 'react-redux';
+import {applyMiddleware, combineReducers, createStore} from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import {FilmsReducer} from './reducers/films-reducer';
-import { persistStore, persistReducer } from 'redux-persist';
+import {persistReducer, persistStore} from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { PersistGate } from 'redux-persist/integration/react';
-import {
-	HashRouter as Router,
-	Route,
-	Switch
-} from 'react-router-dom';
+import {PersistGate} from 'redux-persist/integration/react';
+import {HashRouter as Router, Route, Switch} from 'react-router-dom';
 import {FilmReducer} from './reducers/film-reducer';
+import {NotFoundPage} from './pages/not-found-page';
 
 const persistConfig = {
 	key: 'root',
@@ -45,6 +42,7 @@ ReactDOM.render(
 					<Switch>
 						<Route path="/" exact component={MainPage}/>
 						<Route path="/overview/:id" component={OverviewPage}/>
+						<Route path="*" component={NotFoundPage}/>
 					</Switch>
 				</Router>
 			</ErrorBoundary>
