@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import FilmsList from '../components/films-list/films-list.jsx';
 import SearchHeader from '../components/search-header/search-header.jsx';
-import store from '../main.jsx';
+import { store } from '../store-config.jsx';
 import { fetchMovies } from '../action/films-download-actions-generator';
 
 @connect(state => ({

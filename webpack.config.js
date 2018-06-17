@@ -62,6 +62,11 @@ module.exports = function (env, options) {
                 template: 'src/index.html',
                 inject: 'body'
             })
-        ]
-    };
+        ],
+
+		node: {
+            fs: 'empty',
+            module: 'empty'
+        }
+	};
 };

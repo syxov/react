@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import './search-header.less';
-import store from '../../main.jsx';
+import { store } from '../../store-config.jsx';
 import { fetchMovies } from '../../action/films-download-actions-generator';
 
 const searchBy = {

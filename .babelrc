@@ -1,4 +1,16 @@
 {
   "presets": ["env", "flow", "stage-0"],
-  "plugins": ["transform-react-jsx", "transform-decorators-legacy", "transform-object-rest-spread", "transform-es3-member-expression-literals", "transform-es3-property-literals"]
+  "plugins": [
+    "transform-react-jsx",
+    "transform-decorators-legacy",
+    "transform-object-rest-spread",
+    "transform-es3-member-expression-literals",
+    "transform-es3-property-literals",
+    [
+      "babel-plugin-transform-require-ignore",
+      {
+        "extensions": [".less"]
+      }
+    ]
+  ]
 }
