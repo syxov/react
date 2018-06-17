@@ -1,19 +1,37 @@
 import React from 'react';
+import injectSheet from 'react-jss';
 import { Link } from 'react-router-dom';
 import './film-preview.less';
 
-export default function FilmPreview(props) {
+const styles = {
+  poster: {
+    width: '250px',
+    height: '300px',
+  },
+  previewFistRow: {
+    display: 'flex',
+    'justify-content': 'space-between',
+  },
+  year: {
+    border: '1px solid black',
+    padding: '3px',
+  },
+};
+
+function FilmPreview(props) {
   return (
-    <div className="film-preview">
+    <div>
       <Link to={`/overview/${props.id}`}>
-        <img src={props.filmPosterSrc} />
+        <img className={props.classes.poster} src={props.filmPosterSrc} />
       </Link>
-      <div className="film-preview-info">
-        <div className="first-row">
-          <span>{props.filmName}</span><span className="year">{props.filmCreationYear}</span>
+      <div>
+        <div className={props.classes.previewFistRow}>
+          <span>{props.filmName}</span><span className={props.classes.year}>{props.filmCreationYear}</span>
         </div>
-        <div className="second-row">{props.filmGenre.join(', ')}</div>
+        <div>{props.filmGenre.join(', ')}</div>
       </div>
     </div>
   );
 }
+
+export default injectSheet(styles)(FilmPreview);
