@@ -1,9 +1,11 @@
-export class ErrorBoundary extends React.PureComponent {
-    componentDidCatch(error, info) {
-        console.log(error, info);
-    }
+import React from 'react';
 
-    render() {
-        return this.props.children;
-    }
+export default class ErrorBoundary extends React.PureComponent {
+  componentDidCatch(error, info) {
+    console.log(this, error, info);
+  }
+
+  render() {
+    return this.props.children;
+  }
 }

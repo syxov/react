@@ -1,25 +1,25 @@
-import {FilmInfoHeader} from '../components/film-info-header/film-info-header';
-import {FilmsList} from '../components/films-list/films-list';
-import {Fragment} from 'react';
-import {fetchMovieInfo} from '../action/film-download-actions-generator';
-import {connect} from 'react-redux';
-import {store} from "../main";
+import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import FilmInfoHeader from '../components/film-info-header/film-info-header.jsx';
+import FilmsList from '../components/films-list/films-list.jsx';
+import { fetchMovieInfo } from '../action/film-download-actions-generator';
+import store from '../main.jsx';
 
 @connect(state => ({
-	film: state.filmOverview
+  film: state.filmOverview,
 }))
-export class OverviewPage extends React.PureComponent {
-	constructor(...args) {
-		super(...args);
-		store.dispatch(fetchMovieInfo(this.props.match.params.id));
-	}
+export default class OverviewPage extends React.PureComponent {
+  constructor(...args) {
+    super(...args);
+    store.dispatch(fetchMovieInfo(this.props.match.params.id));
+  }
 
-    render() {
-        return (
-            <Fragment>
-                <FilmInfoHeader {...(this.props.film || {})}/>
-                <FilmsList films={[]}/>
-            </Fragment>
-        );
-    }
+  render() {
+    return (
+      <Fragment>
+        <FilmInfoHeader {...(this.props.film || {})} />
+        <FilmsList films={[]} />
+      </Fragment>
+    );
+  }
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import {FilmPreview} from './film-preview';
+import FilmPreview from './film-preview';
 
 test('FilmPreview should display film info', () => {
     const filmInfo = {

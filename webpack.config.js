@@ -29,6 +29,12 @@ module.exports = function (env, options) {
         module: {
             rules: [
                 {
+                    enforce: "pre",
+                    test: /\.jsx?$/,
+                    exclude: /node_modules/,
+                    loader: "eslint-loader?fix=true",
+                },
+                {
                     test: /\.html$/,
                     loader: 'html-loader?caseSensitive=true'
                 },
@@ -55,11 +61,6 @@ module.exports = function (env, options) {
             new HtmlWebpackPlugin({
                 template: 'src/index.html',
                 inject: 'body'
-            }),
-
-            new webpack.ProvidePlugin({
-                React: 'react',
-                ReactDOM: 'react-dom'
             })
         ]
     };
