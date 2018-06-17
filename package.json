@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "start": "webpack-dev-server --hot --inline --progress --port 9000 --mode development",
-    "serve": "webpack -d && babel-node ./backend/index.js",
+    "serve": "webpack -p && babel-node ./backend/index.js",
     "build": "webpack -p --mode production",
     "flow": "flow"
   },
